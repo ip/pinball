@@ -514,7 +514,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1832182779}
-  maxSpeed: 150
+  progressBar: {fileID: 1534544058}
+  maxSpeed: 100
+  maxChargeTime: 1
 --- !u!1 &443090223
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,7 +2587,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maskBar: {fileID: 466399790}
-  progress: 0
 --- !u!1 &1572332714
 GameObject:
   m_ObjectHideFlags: 0
