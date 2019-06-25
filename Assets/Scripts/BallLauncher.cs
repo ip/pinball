@@ -13,6 +13,7 @@ namespace Pinball
 
         private const KeyCode _launchKey = KeyCode.Space;
 
+        private const float _ballRadius = 1;
         private Vector2 _initialPosition;
         private bool _launchKeyReleased = false;
 
@@ -26,7 +27,7 @@ namespace Pinball
 
         private void Update()
         {
-            if (Input.GetKeyDown(_launchKey))
+            if (Input.GetKeyDown(_launchKey) && _IsBallAtStart())
                 _BeginBallLaunch();
 
             // Input.GetKeyUp() doesn't work from coroutines, workaround
@@ -36,6 +37,9 @@ namespace Pinball
             if (Application.isEditor && Input.GetKeyDown(KeyCode.Return))
                 _RespawnBall();
         }
+
+        private bool _IsBallAtStart() =>
+            Vector2.Distance(_initialPosition, ball.position) < _ballRadius;
 
         private void _BeginBallLaunch()
         {
