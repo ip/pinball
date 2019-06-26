@@ -23,6 +23,8 @@ namespace Pinball
             Debug.Assert(progressBar != null);
 
             _initialPosition = ball.position;
+
+            EventManager.instance.OnGameStart += _RespawnBall;
         }
 
         private void Update()
@@ -32,10 +34,6 @@ namespace Pinball
 
             // Input.GetKeyUp() doesn't work from coroutines, workaround
             _launchKeyReleased = Input.GetKeyUp(_launchKey);
-
-            // For development
-            if (Application.isEditor && Input.GetKeyDown(KeyCode.Return))
-                _RespawnBall();
         }
 
         private bool _IsBallAtStart() =>
@@ -78,6 +76,10 @@ namespace Pinball
         {
             ball.velocity = Vector2.zero;
             ball.position = _initialPosition;
+
+            // Update Transform's position as well, otherwise game over
+            // will be triggered in the next frame
+            ball.transform.position = _initialPosition;
         }
     }
 }
