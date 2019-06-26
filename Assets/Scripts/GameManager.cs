@@ -16,7 +16,7 @@ namespace Pinball
         public Transform ball;
 
         [Tooltip("The game is over once the ball reaches this Y coordinate")]
-        public float gameOverBallPosition;
+        public float drainPosition;
 
         public GameState gameState { get; private set; }
 
@@ -40,7 +40,7 @@ namespace Pinball
         private void _EndGameIfNeeded()
         {
             bool isGameRunning = gameState == GameState.Running;
-            bool isOutOfBorder = ball.position.y < gameOverBallPosition;
+            bool isOutOfBorder = ball.position.y < drainPosition;
             bool shouldEndGame = isGameRunning && isOutOfBorder;
             if (shouldEndGame)
                 _EndGame();

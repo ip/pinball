@@ -962,7 +962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1832182778}
-  gameOverBallPosition: -20.72
+  drainPosition: -20.72
 --- !u!1 &428279930
 GameObject:
   m_ObjectHideFlags: 0
