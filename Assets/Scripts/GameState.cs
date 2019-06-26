@@ -4,21 +4,20 @@ using UnityEngine;
 
 namespace Pinball
 {
-    public enum GameState
+    public enum GameRunState
     {
         Running,
         Over,
     }
 
-    // Handles state of the game (end, restart).
-    public class GameManager : MonoBehaviour
+    public class GameState : MonoBehaviour
     {
         public Transform ball;
 
         [Tooltip("The game is over once the ball reaches this Y coordinate")]
         public float drainPosition;
 
-        public GameState gameState { get; private set; }
+        public GameRunState runState { get; private set; }
 
         private void Awake()
         {
@@ -32,14 +31,14 @@ namespace Pinball
 
         public void RestartGame()
         {
-            gameState = GameState.Running;
+            runState = GameRunState.Running;
 
             EventManager.instance.OnGameStart?.Invoke();
         }
 
         private void _EndGameIfNeeded()
         {
-            bool isGameRunning = gameState == GameState.Running;
+            bool isGameRunning = runState == GameRunState.Running;
             bool isOutOfBorder = ball.position.y < drainPosition;
             bool shouldEndGame = isGameRunning && isOutOfBorder;
             if (shouldEndGame)
@@ -48,7 +47,7 @@ namespace Pinball
 
         private void _EndGame()
         {
-            gameState = GameState.Over;
+            runState = GameRunState.Over;
 
             EventManager.instance.OnGameOver?.Invoke();
         }
