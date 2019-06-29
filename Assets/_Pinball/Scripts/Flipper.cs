@@ -7,7 +7,7 @@ namespace Pinball
     [RequireComponent(typeof(Rigidbody2D))]
     public class Flipper : MonoBehaviour
     {
-        public KeyCode triggerKey;
+        public InputSide inputSide;
 
         [Tooltip("Rotation in activated state")]
         public float activeRotation;
@@ -28,7 +28,7 @@ namespace Pinball
         {
             float deltaAngleAbs = rotationSpeed * Time.fixedDeltaTime;
 
-            bool isActive = Input.GetKey(triggerKey);
+            bool isActive = InputManager.instance.IsSidePressed(inputSide);
             float targetAngle = isActive ? activeRotation : _inactiveRotation;
             float currentAngle = _rigidBody.rotation;
             float angleDiff = targetAngle - currentAngle;

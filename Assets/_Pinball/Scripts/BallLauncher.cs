@@ -11,8 +11,6 @@ namespace Pinball
         public float maxSpeed = 100;
         public float maxChargeTime = 1;
 
-        private const KeyCode _launchKey = KeyCode.Space;
-
         private const float _ballRadius = 1;
         private Vector2 _initialPosition;
         private bool _launchKeyReleased = false;
@@ -29,11 +27,12 @@ namespace Pinball
 
         private void Update()
         {
-            if (Input.GetKeyDown(_launchKey) && _IsBallAtStart())
+            if (InputManager.instance.IsLaunchStarted() && _IsBallAtStart())
                 _BeginBallLaunch();
 
             // Input.GetKeyUp() doesn't work from coroutines, workaround
-            _launchKeyReleased = Input.GetKeyUp(_launchKey);
+            // TODO: move the workaround into InputManager
+            _launchKeyReleased = InputManager.instance.IsLaunchEnded();
         }
 
         private bool _IsBallAtStart() =>
