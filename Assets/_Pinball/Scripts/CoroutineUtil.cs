@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace Pinball
 {
-    public class AsyncUtils : MonoBehaviour
+    public class CoroutineUtil : MonoBehaviour
     {
-        public static AsyncUtils instance;
+        public static CoroutineUtil instance;
 
         private void Awake()
         {

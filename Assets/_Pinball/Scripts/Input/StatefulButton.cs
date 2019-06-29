@@ -29,11 +29,11 @@ namespace Pinball
         private void Update()
         {
             if (isPressStarted)
-                AsyncUtils.instance.WaitForEndOfFrame(
+                CoroutineUtil.instance.WaitForEndOfFrame(
                     () => isPressStarted = false);
 
             if (isPressEnded)
-                AsyncUtils.instance.WaitForEndOfFrame(
+                CoroutineUtil.instance.WaitForEndOfFrame(
                     () => isPressEnded = false);
         }
     }
