@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1551696175628359615}
   - component: {fileID: 1551696175628359609}
   - component: {fileID: 1688144099}
-  - component: {fileID: 3806337420734541828}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
@@ -108,25 +107,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77776a12ca8ae4c899d51f4c3ecf99db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 100
---- !u!50 &3806337420734541828
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551696175628359613}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  strength: 40

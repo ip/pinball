@@ -6,7 +6,7 @@ namespace Pinball
 {
     public class Bumper : MonoBehaviour
     {
-        public float strength = 100;
+        public float strength = 40;
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
