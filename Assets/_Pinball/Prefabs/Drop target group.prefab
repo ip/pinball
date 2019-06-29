@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength: 15
+  scoreValue: 100
 --- !u!114 &1308391429117190649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26,6 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength: 15
+  scoreValue: 5000
 --- !u!1 &1308391429682798277
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +79,7 @@ MonoBehaviour:
   - {fileID: 1308391430582932156}
   - {fileID: 986093693683095041}
   - {fileID: 986093693988148154}
+  scoreValue: 5000
 --- !u!114 &2025698123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength: 15
+  scoreValue: 100
 --- !u!1 &1308391430684321892
 GameObject:
   m_ObjectHideFlags: 0

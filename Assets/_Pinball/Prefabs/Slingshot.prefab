@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength: 40
+  scoreValue: 100
 --- !u!1 &9171025088098102288
 GameObject:
   m_ObjectHideFlags: 0

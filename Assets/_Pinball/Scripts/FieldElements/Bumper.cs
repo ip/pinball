@@ -1,16 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Pinball
 {
-    // See https://en.wikipedia.org/wiki/Pinball#Bumpers.
+    // In the collision, kicks the ball in the opposite direction.
     // This script is also used for slingshots.
-    public class Bumper : MonoBehaviour
+    public class Bumper : MonoBehaviour, IScoreAdder
     {
         public float strength = 40;
+        public int scoreValue = 100;
+
+        public Action<int> OnScoreAdded { get; set; }
 
         private void OnCollisionEnter2D(Collision2D collision)
+        {
+            _KickBallBack(collision);
+
+            OnScoreAdded(scoreValue);
+        }
+
+        private void _KickBallBack(Collision2D collision)
         {
             Vector2 normal = _GetAverageNormal(collision);
             Vector2 impulse = -normal * strength;
