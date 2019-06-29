@@ -4,6 +4,8 @@ using UnityEngine;
 
 namespace Pinball
 {
+    // See https://en.wikipedia.org/wiki/Pinball#Bumpers.
+    // This script is also used for slingshots.
     public class Bumper : MonoBehaviour
     {
         public float strength = 40;
