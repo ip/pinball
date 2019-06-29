@@ -10,9 +10,21 @@ namespace Pinball
         Over,
     }
 
+    // Contains game state and notifies about its changes (no logic there).
     public class GameState : MonoBehaviour
     {
         public GameRunState runState { get; private set; }
+        public Observable<int> score;
+
+        private void Awake()
+        {
+            score = new Observable<int>();
+        }
+
+        private void Start()
+        {
+            RestartGame();
+        }
 
         public void RestartGame()
         {

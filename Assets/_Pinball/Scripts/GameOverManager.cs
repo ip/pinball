@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Pinball
 {
+    // Ends game when the ball falls into drain.
     [RequireComponent(typeof(GameState))]
     public class GameOverManager : MonoBehaviour
     {
