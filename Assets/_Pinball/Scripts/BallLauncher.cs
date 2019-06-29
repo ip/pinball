@@ -30,8 +30,8 @@ namespace Pinball
             if (InputManager.instance.IsLaunchStarted() && _IsBallAtStart())
                 _BeginBallLaunch();
 
-            // Input.GetKeyUp() doesn't work from coroutines, workaround
-            // TODO: move the workaround into InputManager
+            // This is a workaround for the fact that Input.GetKeyUp()
+            // doesn't work from coroutines - remember it here in Update()
             _launchKeyReleased = InputManager.instance.IsLaunchEnded();
         }
 
