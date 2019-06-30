@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Pinball
 {
-    [Serializable]
-    public enum InputSide
-    {
-        Left,
-        Right,
-    }
-
     // Provides player controls - uses keyboard in the editor and touch screen
     // on mobile.
     [RequireComponent(typeof(InputProvider))]
