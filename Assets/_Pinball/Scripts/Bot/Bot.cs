@@ -60,6 +60,13 @@ namespace Pinball
                 return;
 
             _HandleBallLaunch();
+        }
+
+        private void FixedUpdate()
+        {
+            if (!_isActive)
+                return;
+
             _TriggerFlippersIfNeeded();
         }
 
