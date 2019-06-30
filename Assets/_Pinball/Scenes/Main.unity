@@ -1275,6 +1275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288f2114044354a6a966151fea5a5555, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ball: {fileID: 1832182778}
+  triggerMin: 2
+  triggerMax: 3.87
   minLaunchSpeed: 47.7
 --- !u!1 &428279930
 GameObject:
