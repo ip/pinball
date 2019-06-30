@@ -380,9 +380,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1734335947}
   - {fileID: 228619661}
   - {fileID: 1534544057}
-  - {fileID: 1734335947}
+  - {fileID: 352660990}
   - {fileID: 1500325492}
   - {fileID: 1841271006}
   - {fileID: 1688144098}
@@ -392,7 +393,6 @@ Transform:
   - {fileID: 1291060250}
   - {fileID: 786087732}
   - {fileID: 2053797425}
-  - {fileID: 352660990}
   - {fileID: 619089053}
   - {fileID: 1712848735}
   - {fileID: 1377718864}
@@ -737,7 +737,7 @@ Transform:
   - {fileID: 1391225157}
   - {fileID: 428279931}
   m_Father: {fileID: 112418198}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &244547890
 GameObject:
@@ -1159,7 +1159,7 @@ Transform:
   m_Children:
   - {fileID: 614358144}
   m_Father: {fileID: 112418198}
-  m_RootOrder: 12
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &365769814 stripped
 Transform:
@@ -1328,7 +1328,7 @@ GameObject:
   - component: {fileID: 379018026}
   - component: {fileID: 379018025}
   m_Layer: 0
-  m_Name: Wall (3)
+  m_Name: Bumper wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1617,7 +1617,7 @@ GameObject:
   - component: {fileID: 437421684}
   - component: {fileID: 437421683}
   m_Layer: 0
-  m_Name: Wall (4)
+  m_Name: Bumper wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4725,7 +4725,7 @@ PrefabInstance:
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
@@ -5050,7 +5050,7 @@ PrefabInstance:
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
@@ -5269,7 +5269,7 @@ PrefabInstance:
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
@@ -5776,7 +5776,7 @@ GameObject:
   - component: {fileID: 1377718866}
   - component: {fileID: 1377718865}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Bumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6317,7 +6317,7 @@ Transform:
   - {fileID: 413446300}
   - {fileID: 604952884}
   m_Father: {fileID: 112418198}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1534544056
 GameObject:
@@ -6350,7 +6350,7 @@ Transform:
   - {fileID: 918958313}
   - {fileID: 466399790}
   m_Father: {fileID: 112418198}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1534544058
 MonoBehaviour:
@@ -6379,7 +6379,7 @@ GameObject:
   - component: {fileID: 1562092261}
   - component: {fileID: 1562092260}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Bumper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6775,7 +6775,7 @@ GameObject:
   - component: {fileID: 1712848737}
   - component: {fileID: 1712848736}
   m_Layer: 0
-  m_Name: Wall (2)
+  m_Name: Bumper wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7102,7 +7102,7 @@ Transform:
   m_LocalScale: {x: 20, y: 48.008, z: 1}
   m_Children: []
   m_Father: {fileID: 112418198}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1735803111
 GameObject:
@@ -7921,7 +7921,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1.0551, z: 1}
   m_Children: []
   m_Father: {fileID: 112418198}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180.109}
 --- !u!61 &1841271007
 BoxCollider2D:
@@ -8191,7 +8191,7 @@ PrefabInstance:
     - target: {fileID: 1308391429682798274, guid: 001075a163c2f4c4bab2ffde8cb8b324,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1308391429682798274, guid: 001075a163c2f4c4bab2ffde8cb8b324,
         type: 3}
@@ -8245,7 +8245,7 @@ GameObject:
   - component: {fileID: 2061658837}
   - component: {fileID: 2061658836}
   m_Layer: 0
-  m_Name: Wall (5)
+  m_Name: Bumper wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8822,7 +8822,7 @@ PrefabInstance:
     - target: {fileID: 1308391429682798274, guid: 001075a163c2f4c4bab2ffde8cb8b324,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1308391429682798274, guid: 001075a163c2f4c4bab2ffde8cb8b324,
         type: 3}
@@ -8896,7 +8896,7 @@ PrefabInstance:
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -9020,7 +9020,7 @@ PrefabInstance:
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
