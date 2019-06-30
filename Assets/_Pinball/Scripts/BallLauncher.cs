@@ -1,9 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Pinball
 {
+    [RequireComponent(typeof(InputProvider))]
     public class BallLauncher : MonoBehaviour
     {
         public Rigidbody2D ball;
@@ -11,6 +11,7 @@ namespace Pinball
         public float maxSpeed = 100;
         public float maxChargeTime = 1;
 
+        private InputProvider _input;
         private const float _ballRadius = 1;
         private Vector2 _initialPosition;
         private bool _launchKeyReleased = false;
@@ -20,6 +21,8 @@ namespace Pinball
             Debug.Assert(ball != null);
             Debug.Assert(progressBar != null);
 
+            _input = GetComponent<InputProvider>();
+
             _initialPosition = ball.position;
 
             EventManager.instance.OnGameStart += _RespawnBall;
@@ -27,12 +30,12 @@ namespace Pinball
 
         private void Update()
         {
-            if (InputManager.instance.IsLaunchStarted() && _IsBallAtStart())
+            if (_input.IsLaunchStarted() && _IsBallAtStart())
                 _BeginBallLaunch();
 
             // This is a workaround for the fact that Input.GetKeyUp()
-            // doesn't work from coroutines - remember it here in Update()
-            _launchKeyReleased = InputManager.instance.IsLaunchEnded();
+            // doesn't work from coroutines - so we remember its result here
+            _launchKeyReleased = _input.IsLaunchEnded();
         }
 
         private bool _IsBallAtStart() =>

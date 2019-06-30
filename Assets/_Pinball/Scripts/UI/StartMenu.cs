@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Pinball
 {
-    public class GameOverDialog : MonoBehaviour
+    public class StartMenu : MonoBehaviour
     {
         private GameObject _content;
 

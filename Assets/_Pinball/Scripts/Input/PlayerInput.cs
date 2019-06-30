@@ -12,12 +12,11 @@ namespace Pinball
         Right,
     }
 
-    // Abstracts the input method - uses keyboard in the editor and touch screen
+    // Provides player controls - uses keyboard in the editor and touch screen
     // on mobile.
-    public class InputManager : MonoBehaviour
+    [RequireComponent(typeof(InputProvider))]
+    public class PlayerInput : MonoBehaviour, IInput
     {
-        public static InputManager instance;
-
         public StatefulButton leftSide;
         public StatefulButton rightSide;
 
@@ -25,10 +24,12 @@ namespace Pinball
 
         private void Awake()
         {
-            instance = this;
-
             Debug.Assert(leftSide != null);
             Debug.Assert(rightSide != null);
+
+            var inputProvider = GetComponent<InputProvider>();
+            EventManager.instance.OnGameStart += () =>
+                inputProvider.input = this;
         }
 
         public bool IsSidePressed(InputSide side)

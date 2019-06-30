@@ -23,7 +23,7 @@ namespace Pinball
 
         private void Start()
         {
-            RestartGame();
+            EndGame();
         }
 
         public void RestartGame()
