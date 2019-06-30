@@ -29,6 +29,9 @@ namespace Pinball
             _material = GetComponent<MeshRenderer>().material;
 
             _disabledColor = _material.color;
+
+            EventManager.instance.OnGameStart += _ =>
+                rolloverEnabled = false;
         }
 
         private void OnTriggerEnter2D(Collider2D collider)
