@@ -392,12 +392,12 @@ Transform:
   - {fileID: 786087732}
   - {fileID: 2053797425}
   - {fileID: 480410538}
+  - {fileID: 1841271006}
   - {fileID: 619089053}
   - {fileID: 733298908}
   - {fileID: 1027488932}
   - {fileID: 1793301177}
   - {fileID: 852822125}
-  - {fileID: 1841271006}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -731,6 +731,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 589765239}
   - {fileID: 1391225157}
   - {fileID: 428279931}
   m_Father: {fileID: 112418198}
@@ -1292,7 +1293,7 @@ GameObject:
   - component: {fileID: 428279933}
   - component: {fileID: 428279932}
   - component: {fileID: 428279935}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flipper (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1314,7 @@ Transform:
   - {fileID: 1001208058}
   - {fileID: 1061463195}
   m_Father: {fileID: 228619661}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -142.5}
 --- !u!61 &428279932
 BoxCollider2D:
@@ -1598,7 +1599,7 @@ PrefabInstance:
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
@@ -1764,6 +1765,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1175277834}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &589765238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 589765239}
+  m_Layer: 0
+  m_Name: Flipper triggers (for bot)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &589765239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589765238}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1173864839}
+  - {fileID: 982455446}
+  m_Father: {fileID: 228619661}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &616291494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,7 +1896,7 @@ PrefabInstance:
     - target: {fileID: 1308391429682798274, guid: 001075a163c2f4c4bab2ffde8cb8b324,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1308391429682798274, guid: 001075a163c2f4c4bab2ffde8cb8b324,
         type: 3}
@@ -2553,7 +2586,7 @@ PrefabInstance:
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
@@ -2721,7 +2754,7 @@ PrefabInstance:
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
@@ -3182,6 +3215,85 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971443952}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &982455445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982455446}
+  - component: {fileID: 982455447}
+  - component: {fileID: 982455448}
+  m_Layer: 10
+  m_Name: Flipper trigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &982455446
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982455445}
+  m_LocalRotation: {x: 0, y: 0, z: -0.32143947, w: 0.94693017}
+  m_LocalPosition: {x: 4.53, y: -17.47, z: 0}
+  m_LocalScale: {x: -1, y: -1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 589765239}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.5}
+--- !u!60 &982455447
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982455445}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.58819705, y: 2.0598674}
+      - {x: 1.3497715, y: 1.6221488}
+      - {x: 1.8300787, y: 0.9862719}
+      - {x: 1.9223764, y: 0.029121116}
+      - {x: 3.2825592, y: 0.0048163235}
+      - {x: 3.194797, y: 1.15252}
+      - {x: 2.6439946, y: 2.1598186}
+      - {x: 1.8903179, y: 2.8546493}
+      - {x: 0.90106773, y: 3.2579849}
+--- !u!114 &982455448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982455445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c344c230a9874bf2be5532a286cab59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipper: {fileID: 428279934}
 --- !u!1 &986016531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,7 +3547,7 @@ PrefabInstance:
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
@@ -3668,6 +3780,85 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073599994}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1173864838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1173864839}
+  - component: {fileID: 1173864840}
+  - component: {fileID: 1173864841}
+  m_Layer: 10
+  m_Name: Flipper trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &1173864839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173864838}
+  m_LocalRotation: {x: 0, y: 0, z: -0.32143947, w: 0.94693017}
+  m_LocalPosition: {x: -4.53, y: -17.47, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 589765239}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.5}
+--- !u!60 &1173864840
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173864838}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.58819705, y: 2.0598674}
+      - {x: 1.3497715, y: 1.6221488}
+      - {x: 1.8300787, y: 0.9862719}
+      - {x: 1.9223764, y: 0.029121116}
+      - {x: 3.2825592, y: 0.0048163235}
+      - {x: 3.194797, y: 1.15252}
+      - {x: 2.6439946, y: 2.1598186}
+      - {x: 1.8903179, y: 2.8546493}
+      - {x: 0.90106773, y: 3.2579849}
+--- !u!114 &1173864841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173864838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c344c230a9874bf2be5532a286cab59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flipper: {fileID: 1391225158}
 --- !u!1001 &1175277834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3718,7 +3909,7 @@ PrefabInstance:
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
@@ -3791,7 +3982,7 @@ PrefabInstance:
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
@@ -3995,7 +4186,7 @@ PrefabInstance:
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
@@ -4301,7 +4492,7 @@ GameObject:
   - component: {fileID: 1391225160}
   - component: {fileID: 1391225159}
   - component: {fileID: 1391225161}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4322,7 +4513,7 @@ Transform:
   - {fileID: 1463284331}
   - {fileID: 126057044}
   m_Father: {fileID: 228619661}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -37.5}
 --- !u!114 &1391225158
 MonoBehaviour:
@@ -5434,7 +5625,7 @@ PrefabInstance:
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
@@ -5598,7 +5789,7 @@ GameObject:
   - component: {fileID: 1832182776}
   - component: {fileID: 1832182779}
   - component: {fileID: 1832182775}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5734,7 +5925,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1.0551, z: 1}
   m_Children: []
   m_Father: {fileID: 112418198}
-  m_RootOrder: 17
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 181.24199}
 --- !u!61 &1841271007
 BoxCollider2D:
@@ -5971,7 +6162,7 @@ PrefabInstance:
     - target: {fileID: 1308391429682798274, guid: 001075a163c2f4c4bab2ffde8cb8b324,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1308391429682798274, guid: 001075a163c2f4c4bab2ffde8cb8b324,
         type: 3}
@@ -6461,7 +6652,7 @@ PrefabInstance:
     - target: {fileID: 1308391429682798274, guid: 001075a163c2f4c4bab2ffde8cb8b324,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1308391429682798274, guid: 001075a163c2f4c4bab2ffde8cb8b324,
         type: 3}
@@ -6535,7 +6726,7 @@ PrefabInstance:
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1551696175628359614, guid: df5216fce40694c549e45df5376b5d62,
         type: 3}
@@ -6605,7 +6796,7 @@ PrefabInstance:
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9171025088159316157, guid: 534ca7937b0e14213b8ff2d44521d178,
         type: 3}

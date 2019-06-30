@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -22,12 +21,6 @@ namespace Pinball
     [RequireComponent(typeof(InputProvider), typeof(BallLauncher))]
     public class Bot : MonoBehaviour
     {
-        private struct FlipperInfo
-        {
-            public Vector2 position;
-            public InputSide side;
-        }
-
         public Transform ball;
 
         // A flipper will be triggered when the distance between the ball
@@ -41,17 +34,17 @@ namespace Pinball
         private BotInput _input = new BotInput();
         private bool _isActive;
         private bool _isLaunching;
-        private FlipperInfo[] _flippersInfo;
+        private FlipperTrigger[] _flipperTriggers;
 
         private void Awake()
         {
             _ballLauncher = GetComponent<BallLauncher>();
+            _CacheFlipperTriggers();
 
             Debug.Assert(ball != null);
             Debug.Assert(minLaunchSpeed <= _ballLauncher.maxSpeed);
 
             _SubscribeToPlayStateChange();
-            _CacheFlippersInfo();
         }
 
         private void Update()
@@ -114,15 +107,10 @@ namespace Pinball
             _isLaunching = false;
         }
 
-        private void _CacheFlippersInfo()
+        private void _CacheFlipperTriggers()
         {
-            _flippersInfo = MonoBehaviour.FindObjectsOfType<Flipper>()
-                .Select(flipper => new FlipperInfo
-                {
-                    position = (Vector2)flipper.transform.position,
-                    side = flipper.inputSide,
-                })
-                .ToArray();
+            _flipperTriggers =
+                MonoBehaviour.FindObjectsOfType<FlipperTrigger>();
         }
 
         private void _TriggerFlippersIfNeeded()
@@ -133,15 +121,16 @@ namespace Pinball
             for (int j = 0; j < isSidePressed.Length; ++j)
                 isSidePressed[j] = false;
 
-            for (int i = 0; i < _flippersInfo.Length; ++i)
+            for (int i = 0; i < _flipperTriggers.Length; ++i)
             {
-                var flipper = _flippersInfo[i];
+                FlipperTrigger trigger = _flipperTriggers[i];
+                bool shouldTrigger = trigger.isTriggered;
 
-                float distance = Vector2.Distance(flipper.position, ballPos);
-                bool shouldTrigger = distance >= triggerMin &&
-                                     distance <= triggerMax;
                 if (shouldTrigger)
-                    isSidePressed[(int)flipper.side] = true;
+                {
+                    InputSide side = trigger.flipper.inputSide;
+                    isSidePressed[(int)side] = true;
+                }
             }
         }
     }
