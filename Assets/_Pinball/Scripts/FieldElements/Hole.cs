@@ -5,11 +5,14 @@ using UnityEngine;
 
 namespace Pinball
 {
-    public class Hole : MonoBehaviour
+    public class Hole : MonoBehaviour, IScoreAdder
     {
         public Rigidbody2D otherHole;
         public float delay = 1;
         public float kickVelocity = 100;
+        public int scoreValue = 5000;
+
+        public Action<int> OnScoreAdded { get; set; }
 
         private Rigidbody2D _ball;
 
@@ -23,6 +26,8 @@ namespace Pinball
         private void OnTriggerEnter2D(Collider2D collider)
         {
             StartCoroutine(_TeleportBall());
+
+            OnScoreAdded(scoreValue);
         }
 
         private IEnumerator _TeleportBall()
