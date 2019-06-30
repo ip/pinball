@@ -11,6 +11,8 @@ namespace Pinball
         public float maxSpeed = 100;
         public float maxChargeTime = 1;
 
+        public float currentLaunchSpeed { get; private set; }
+
         private InputProvider _input;
         private const float _ballRadius = 1;
         private Vector2 _initialPosition;
@@ -30,7 +32,7 @@ namespace Pinball
 
         private void Update()
         {
-            if (_input.IsLaunchStarted() && _IsBallAtStart())
+            if (_input.IsLaunchStarted() && IsBallAtStart())
                 _BeginBallLaunch();
 
             // This is a workaround for the fact that Input.GetKeyUp()
@@ -38,7 +40,7 @@ namespace Pinball
             _launchKeyReleased = _input.IsLaunchEnded();
         }
 
-        private bool _IsBallAtStart() =>
+        public bool IsBallAtStart() =>
             Vector2.Distance(_initialPosition, ball.position) < _ballRadius;
 
         private void _BeginBallLaunch()
@@ -60,11 +62,12 @@ namespace Pinball
                 shouldStop = progress == 1 || _launchKeyReleased;
 
                 progressBar.SetProgress(progress);
+                currentLaunchSpeed = progress * maxSpeed;
 
                 yield return new WaitForEndOfFrame();
             }
 
-            _LaunchBall(speed: progress * maxSpeed);
+            _LaunchBall(currentLaunchSpeed);
 
             progressBar.SetProgress(0);
         }
