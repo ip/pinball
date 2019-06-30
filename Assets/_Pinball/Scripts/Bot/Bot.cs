@@ -10,8 +10,7 @@ namespace Pinball
     {
         public bool isLaunchStarted;
         public bool isLaunchEnded;
-        public bool[] isSidePressed =
-            new bool[Enum.GetNames(typeof(InputSide)).Length];
+        public bool[] isSidePressed = new bool[(int)InputSide.Count];
 
         public bool IsSidePressed(InputSide side) => isSidePressed[(int)side];
         public bool IsLaunchStarted() => isLaunchStarted;

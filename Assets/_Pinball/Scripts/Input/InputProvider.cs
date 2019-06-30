@@ -8,12 +8,11 @@ namespace Pinball
     public class InputProvider : MonoBehaviour, IInput
     {
         public IInput input;
-        public bool isScreenDown { get; private set; }
 
         private NullInput _nullInput;
-
+        private bool[] _isSideDown = new bool[(int)InputSide.Count];
         // Was screen pressed in last frame?
-        private bool _screenWasPressed;
+        private bool[] _sideWasPressed = new bool[(int)InputSide.Count];
 
         private void Awake()
         {
@@ -25,7 +24,8 @@ namespace Pinball
 
         private void Update()
         {
-            _UpdateIsScreenDown();
+            _UpdateIsSideDown(InputSide.Left);
+            _UpdateIsSideDown(InputSide.Right);
         }
 
         // IInput
@@ -33,22 +33,26 @@ namespace Pinball
         public bool IsLaunchStarted() => input.IsLaunchStarted();
         public bool IsLaunchEnded() => input.IsLaunchEnded();
 
-        private void _UpdateIsScreenDown()
+        public bool IsSideDown(InputSide side) => _isSideDown[(int)side];
+
+        private void _UpdateIsSideDown(InputSide side)
         {
-            if (IsSidePressed(InputSide.Left) || IsSidePressed(InputSide.Right))
+            int s = (int)side;
+
+            if (IsSidePressed(side))
             {
-                if (!isScreenDown && !_screenWasPressed)
+                if (!_isSideDown[s] && !_sideWasPressed[s])
                 {
-                    isScreenDown = true;
-                    _screenWasPressed = true;
+                    _isSideDown[s] = true;
+                    _sideWasPressed[s] = true;
                 }
                 else
-                    isScreenDown = false;
+                    _isSideDown[s] = false;
             }
             else
             {
-                isScreenDown = false;
-                _screenWasPressed = false;
+                _isSideDown[s] = false;
+                _sideWasPressed[s] = false;
             }
         }
     }

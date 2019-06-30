@@ -28,8 +28,11 @@ namespace Pinball
 
         private void Update()
         {
-            if (_inputProvider.isScreenDown)
+            if (_inputProvider.IsSideDown(InputSide.Left))
                 _ShiftLeft();
+
+            if (_inputProvider.IsSideDown(InputSide.Right))
+                _ShiftRight();
         }
 
         private void _ShiftLeft()
@@ -40,6 +43,12 @@ namespace Pinball
                 rollovers[i].rolloverEnabled = rollovers[i + 1].rolloverEnabled;
 
             rollovers[rollovers.Length - 1].rolloverEnabled = first;
+        }
+
+        private void _ShiftRight()
+        {
+            _ShiftLeft();
+            _ShiftLeft();
         }
 
         private void _HandleGroupActivation()

@@ -7,6 +7,9 @@ namespace Pinball
     {
         Left,
         Right,
+
+        // Must be the last
+        Count,
     }
 
     public interface IInput
