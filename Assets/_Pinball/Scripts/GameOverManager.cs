@@ -8,16 +8,15 @@ namespace Pinball
     [RequireComponent(typeof(GameState))]
     public class GameOverManager : MonoBehaviour
     {
-        public Transform ball;
-
         [Tooltip("The game is over once the ball reaches this Y coordinate")]
         public float drainPosition = -20.72f;
 
+        private Transform _ball;
         private GameState _gameState;
 
         private void Awake()
         {
-            Debug.Assert(ball != null);
+            _ball = GameObject.FindWithTag("Ball").transform;
 
             _gameState = GetComponent<GameState>();
         }
@@ -30,7 +29,7 @@ namespace Pinball
         private void _EndGameIfNeeded()
         {
             bool isGameRunning = _gameState.runState == GameRunState.Running;
-            bool isOutOfBorder = ball.position.y < drainPosition;
+            bool isOutOfBorder = _ball.position.y < drainPosition;
             bool shouldEndGame = isGameRunning && isOutOfBorder;
             if (shouldEndGame)
                 _gameState.EndGame();

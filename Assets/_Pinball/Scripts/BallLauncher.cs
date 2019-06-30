@@ -6,13 +6,13 @@ namespace Pinball
     [RequireComponent(typeof(InputProvider))]
     public class BallLauncher : MonoBehaviour
     {
-        public Rigidbody2D ball;
         public ProgressBar progressBar;
         public float maxSpeed = 100;
         public float maxChargeTime = 1;
 
         public float currentLaunchSpeed { get; private set; }
 
+        private Rigidbody2D _ball;
         private InputProvider _input;
         private const float _ballRadius = 1;
         private Vector2 _initialPosition;
@@ -20,12 +20,12 @@ namespace Pinball
 
         private void Awake()
         {
-            Debug.Assert(ball != null);
             Debug.Assert(progressBar != null);
 
+            _ball = GameObject.FindWithTag("Ball").GetComponent<Rigidbody2D>();
             _input = GetComponent<InputProvider>();
 
-            _initialPosition = ball.position;
+            _initialPosition = _ball.position;
 
             EventManager.instance.OnGameStart += _ => _RespawnBall();
         }
@@ -41,7 +41,7 @@ namespace Pinball
         }
 
         public bool IsBallAtStart() =>
-            Vector2.Distance(_initialPosition, ball.position) < _ballRadius;
+            Vector2.Distance(_initialPosition, _ball.position) < _ballRadius;
 
         private void _BeginBallLaunch()
         {
@@ -74,17 +74,17 @@ namespace Pinball
 
         private void _LaunchBall(float speed)
         {
-            ball.velocity = new Vector2(0, speed);
+            _ball.velocity = new Vector2(0, speed);
         }
 
         private void _RespawnBall()
         {
-            ball.velocity = Vector2.zero;
-            ball.position = _initialPosition;
+            _ball.velocity = Vector2.zero;
+            _ball.position = _initialPosition;
 
             // Update Transform's position as well, otherwise game over
             // will be triggered in the next frame
-            ball.transform.position = _initialPosition;
+            _ball.transform.position = _initialPosition;
         }
     }
 }

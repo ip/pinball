@@ -20,8 +20,6 @@ namespace Pinball
     [RequireComponent(typeof(InputProvider), typeof(BallLauncher))]
     public class Bot : MonoBehaviour
     {
-        public Transform ball;
-
         // A flipper will be triggered when the distance between the ball
         // and the flipper axis falls into this interval
         public float triggerMin = 2;
@@ -29,6 +27,7 @@ namespace Pinball
 
         public float minLaunchSpeed = 47.7f;
 
+        private Transform _ball;
         private BallLauncher _ballLauncher;
         private BotInput _input = new BotInput();
         private bool _isActive;
@@ -37,10 +36,11 @@ namespace Pinball
 
         private void Awake()
         {
+            _ball = GameObject.FindWithTag("Ball").transform;
             _ballLauncher = GetComponent<BallLauncher>();
             _CacheFlipperTriggers();
 
-            Debug.Assert(ball != null);
+            Debug.Assert(_ball != null);
             Debug.Assert(minLaunchSpeed <= _ballLauncher.maxSpeed);
 
             _SubscribeToPlayStateChange();
@@ -115,7 +115,7 @@ namespace Pinball
         private void _TriggerFlippersIfNeeded()
         {
             bool[] isSidePressed = _input.isSidePressed;
-            Vector2 ballPos = ball.transform.position;
+            Vector2 ballPos = _ball.transform.position;
 
             for (int j = 0; j < isSidePressed.Length; ++j)
                 isSidePressed[j] = false;
