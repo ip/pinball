@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Pinball
 {
+    // An indicator which switches when a ball rolls over it.
     public class Rollover : MonoBehaviour
     {
         public Color enabledColor;
