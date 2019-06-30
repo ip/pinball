@@ -25,7 +25,7 @@ namespace Pinball
 
             _initialPosition = ball.position;
 
-            EventManager.instance.OnGameStart += _RespawnBall;
+            EventManager.instance.OnGameStart += _ => _RespawnBall();
         }
 
         private void Update()

@@ -13,7 +13,7 @@ namespace Pinball
             _content = transform.GetChild(0).gameObject;
 
             EventManager.instance.OnGameOver += () => _SetVisibility(true);
-            EventManager.instance.OnGameStart += () => _SetVisibility(false);
+            EventManager.instance.OnGameStart += _ => _SetVisibility(false);
         }
 
         private void _SetVisibility(bool visible)

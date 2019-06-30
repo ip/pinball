@@ -26,11 +26,11 @@ namespace Pinball
             EndGame();
         }
 
-        public void RestartGame()
+        public void RestartGame(bool isBotMode)
         {
             runState = GameRunState.Running;
 
-            EventManager.instance.OnGameStart?.Invoke();
+            EventManager.instance.OnGameStart?.Invoke(isBotMode);
         }
 
         public void EndGame()

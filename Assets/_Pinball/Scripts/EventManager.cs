@@ -20,7 +20,8 @@ namespace Pinball
 
         private static EventManager _instance;
 
-        public Action OnGameStart;
+        // Argument: isBotMode
+        public Action<bool> OnGameStart;
         public Action OnGameOver;
     }
 }

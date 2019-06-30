@@ -35,7 +35,7 @@ namespace Pinball
 
         private void _ResetScoreOnRestart()
         {
-            EventManager.instance.OnGameStart += () =>
+            EventManager.instance.OnGameStart += _ =>
                 _gameState.score.value = 0;
         }
     }

@@ -46,7 +46,7 @@ namespace Pinball
 
         private void _ResetOnGameStart()
         {
-            EventManager.instance.OnGameStart += _ResetTargets;
+            EventManager.instance.OnGameStart += _ => _ResetTargets();
         }
     }
 }

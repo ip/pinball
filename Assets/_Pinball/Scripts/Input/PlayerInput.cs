@@ -28,8 +28,11 @@ namespace Pinball
             Debug.Assert(rightSide != null);
 
             var inputProvider = GetComponent<InputProvider>();
-            EventManager.instance.OnGameStart += () =>
-                inputProvider.input = this;
+            EventManager.instance.OnGameStart += (bool isBotMode) =>
+            {
+                if (!isBotMode)
+                    inputProvider.input = this;
+            };
         }
 
         public bool IsSidePressed(InputSide side)
